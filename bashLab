@@ -1,0 +1,27 @@
+#!/bin/bash
+FILES="/submissions/*"
+
+for f in $FILES
+do
+    echo "Processing $f file..."
+    chmod +x "$f"
+
+    echo -e "\nSYS ARG\n"
+    bash "$f" sys
+
+    echo -e "\nMEM ARG\n"
+    bash "$f" mem
+
+    echo -e "\nDISK ARG\n"
+    bash "$f" disk
+
+    echo -e "\nNO ARG"
+    bash "$f"
+
+    echo -e "\nBAD ARG"
+    bash "$f" bad
+
+    echo -e ""
+    echo -e "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+done
