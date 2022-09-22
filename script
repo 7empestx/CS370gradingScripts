@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Directory where projects are located
+FILES="$(pwd)/*"
+
+# Iterate through files
+for f in $FILES
+do
+    # Do not run current script
+    if [[ $f != "$(pwd)/script" ]]; then
+        echo "Processing..." ${f:${#FILES}:(-4)}
+        rm 
+        #unzip $f -d ${f:${#FILES}:(-4)}
+    fi
+done
